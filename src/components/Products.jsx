@@ -1,19 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
 
-const Products = () => {
-    const [products, setProducts] = useState([])
-
-    async function getProducts () {
-        let res = await fetch ("https://dummyjson.com/products")
-        let data = await res.json()
-        // console.log(data)
-        setProducts(data.products)
-    }
-
-    useEffect(() => {
-        getProducts()
-    }, [])
+const Products = ({products}) => {
+    
 
     return ( 
         <>
